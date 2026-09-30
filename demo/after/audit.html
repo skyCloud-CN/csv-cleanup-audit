@@ -1,0 +1,88 @@
+<!doctype html><html lang="en"><meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CSV cleanup audit / CSV 清理审计</title>
+<style>body{font:16px system-ui,sans-serif;max-width:1000px;margin:40px auto;padding:0 24px;color:#182b39}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f1f5f7;padding:24px}h1{color:#164e63}</style>
+<h1>CSV cleanup audit / CSV 清理审计</h1>
+<p>Local synthetic service sample. Audit values may include private data. Keep reports private.</p>
+<p>仅为本地服务样例。审计报告可能包含原始数据，请妥善保管。疑似公式不会被自动修改。</p>
+<pre>{
+  &quot;tool_version&quot;: &quot;1.0.0&quot;,
+  &quot;status&quot;: &quot;ok&quot;,
+  &quot;input_sha256&quot;: &quot;5f6f2fb5ae062eb4b3a123d4f0c361c82200ce2042aab6b11b7c3ac982a2f71b&quot;,
+  &quot;input_bytes&quot;: 261,
+  &quot;options&quot;: {
+    &quot;trim_data_cells&quot;: true,
+    &quot;remove_exact_processed_duplicates&quot;: true
+  },
+  &quot;errors&quot;: [],
+  &quot;warnings&quot;: [
+    &quot;Formula-like text is preserved. Do not open CSV directly in a spreadsheet; import all columns as text. Detection is heuristic, not a security guarantee.&quot;
+  ],
+  &quot;record_numbering&quot;: &quot;1-based logical CSV records, including header; not physical lines&quot;,
+  &quot;deduplication_basis&quot;: &quot;Exact data-cell strings AFTER optional trim; first occurrence kept&quot;,
+  &quot;blank_header_columns&quot;: [],
+  &quot;duplicate_headers&quot;: [],
+  &quot;input_data_rows&quot;: 6,
+  &quot;columns&quot;: 4,
+  &quot;formula_hazards&quot;: [
+    {
+      &quot;record&quot;: 6,
+      &quot;column&quot;: 3,
+      &quot;value&quot;: &quot;=\&quot;demo\&quot;&quot;,
+      &quot;reason&quot;: &quot;Potential spreadsheet formula/control-prefix hazard; not sanitized&quot;
+    }
+  ],
+  &quot;row_width_errors&quot;: [],
+  &quot;output_data_rows&quot;: 5,
+  &quot;removed_data_rows&quot;: 1,
+  &quot;duplicate_data_rows&quot;: [
+    {
+      &quot;record&quot;: 5,
+      &quot;first_record&quot;: 2
+    }
+  ],
+  &quot;changed_cells&quot;: [
+    {
+      &quot;record&quot;: 2,
+      &quot;column&quot;: 2,
+      &quot;before&quot;: &quot; 张三 &quot;,
+      &quot;after&quot;: &quot;张三&quot;
+    },
+    {
+      &quot;record&quot;: 4,
+      &quot;column&quot;: 2,
+      &quot;before&quot;: &quot; 王五 &quot;,
+      &quot;after&quot;: &quot;王五&quot;
+    }
+  ],
+  &quot;output_source_records&quot;: [
+    2,
+    3,
+    4,
+    6,
+    7
+  ],
+  &quot;removed_records&quot;: [
+    {
+      &quot;record&quot;: 5,
+      &quot;first_record&quot;: 2,
+      &quot;cells&quot;: [
+        &quot;000123&quot;,
+        &quot; 张三 &quot;,
+        &quot;客户, 示例&quot;,
+        &quot;北京&quot;
+      ]
+    }
+  ],
+  &quot;output_formula_hazards&quot;: [
+    {
+      &quot;record&quot;: 5,
+      &quot;column&quot;: 3,
+      &quot;value&quot;: &quot;=\&quot;demo\&quot;&quot;,
+      &quot;reason&quot;: &quot;Potential spreadsheet formula/control-prefix hazard; not sanitized&quot;
+    }
+  ],
+  &quot;output_duplicate_count&quot;: 0,
+  &quot;output_sha256&quot;: &quot;6fab1bbf08f341aed09d93b50dea428a46fb3969dd7cb7268bb1467130bd8194&quot;
+}</pre></html>

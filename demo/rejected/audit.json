@@ -1,0 +1,28 @@
+{
+  "tool_version": "1.0.0",
+  "status": "rejected",
+  "input_sha256": "df61675ed03ffc0d2b0f303f488fd44e6f15c4bb1eb87cf90e6d04951d209dc8",
+  "input_bytes": 32,
+  "options": {
+    "trim_data_cells": false,
+    "remove_exact_processed_duplicates": false
+  },
+  "errors": [
+    "Inconsistent record widths; no cleaned CSV written"
+  ],
+  "warnings": [],
+  "record_numbering": "1-based logical CSV records, including header; not physical lines",
+  "deduplication_basis": "Exact data-cell strings AFTER optional trim; first occurrence kept",
+  "blank_header_columns": [],
+  "duplicate_headers": [],
+  "input_data_rows": 1,
+  "columns": 2,
+  "formula_hazards": [],
+  "row_width_errors": [
+    {
+      "record": 2,
+      "expected": 2,
+      "actual": 3
+    }
+  ]
+}

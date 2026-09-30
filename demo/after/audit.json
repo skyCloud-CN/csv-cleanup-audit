@@ -1,0 +1,80 @@
+{
+  "tool_version": "1.0.0",
+  "status": "ok",
+  "input_sha256": "5f6f2fb5ae062eb4b3a123d4f0c361c82200ce2042aab6b11b7c3ac982a2f71b",
+  "input_bytes": 261,
+  "options": {
+    "trim_data_cells": true,
+    "remove_exact_processed_duplicates": true
+  },
+  "errors": [],
+  "warnings": [
+    "Formula-like text is preserved. Do not open CSV directly in a spreadsheet; import all columns as text. Detection is heuristic, not a security guarantee."
+  ],
+  "record_numbering": "1-based logical CSV records, including header; not physical lines",
+  "deduplication_basis": "Exact data-cell strings AFTER optional trim; first occurrence kept",
+  "blank_header_columns": [],
+  "duplicate_headers": [],
+  "input_data_rows": 6,
+  "columns": 4,
+  "formula_hazards": [
+    {
+      "record": 6,
+      "column": 3,
+      "value": "=\"demo\"",
+      "reason": "Potential spreadsheet formula/control-prefix hazard; not sanitized"
+    }
+  ],
+  "row_width_errors": [],
+  "output_data_rows": 5,
+  "removed_data_rows": 1,
+  "duplicate_data_rows": [
+    {
+      "record": 5,
+      "first_record": 2
+    }
+  ],
+  "changed_cells": [
+    {
+      "record": 2,
+      "column": 2,
+      "before": " 张三 ",
+      "after": "张三"
+    },
+    {
+      "record": 4,
+      "column": 2,
+      "before": " 王五 ",
+      "after": "王五"
+    }
+  ],
+  "output_source_records": [
+    2,
+    3,
+    4,
+    6,
+    7
+  ],
+  "removed_records": [
+    {
+      "record": 5,
+      "first_record": 2,
+      "cells": [
+        "000123",
+        " 张三 ",
+        "客户, 示例",
+        "北京"
+      ]
+    }
+  ],
+  "output_formula_hazards": [
+    {
+      "record": 5,
+      "column": 3,
+      "value": "=\"demo\"",
+      "reason": "Potential spreadsheet formula/control-prefix hazard; not sanitized"
+    }
+  ],
+  "output_duplicate_count": 0,
+  "output_sha256": "6fab1bbf08f341aed09d93b50dea428a46fb3969dd7cb7268bb1467130bd8194"
+}

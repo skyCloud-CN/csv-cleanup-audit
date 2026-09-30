@@ -1,0 +1,36 @@
+<!doctype html><html lang="en"><meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CSV cleanup audit / CSV 清理审计</title>
+<style>body{font:16px system-ui,sans-serif;max-width:1000px;margin:40px auto;padding:0 24px;color:#182b39}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f1f5f7;padding:24px}h1{color:#164e63}</style>
+<h1>CSV cleanup audit / CSV 清理审计</h1>
+<p>Local synthetic service sample. Audit values may include private data. Keep reports private.</p>
+<p>仅为本地服务样例。审计报告可能包含原始数据，请妥善保管。疑似公式不会被自动修改。</p>
+<pre>{
+  &quot;tool_version&quot;: &quot;1.0.0&quot;,
+  &quot;status&quot;: &quot;rejected&quot;,
+  &quot;input_sha256&quot;: &quot;df61675ed03ffc0d2b0f303f488fd44e6f15c4bb1eb87cf90e6d04951d209dc8&quot;,
+  &quot;input_bytes&quot;: 32,
+  &quot;options&quot;: {
+    &quot;trim_data_cells&quot;: false,
+    &quot;remove_exact_processed_duplicates&quot;: false
+  },
+  &quot;errors&quot;: [
+    &quot;Inconsistent record widths; no cleaned CSV written&quot;
+  ],
+  &quot;warnings&quot;: [],
+  &quot;record_numbering&quot;: &quot;1-based logical CSV records, including header; not physical lines&quot;,
+  &quot;deduplication_basis&quot;: &quot;Exact data-cell strings AFTER optional trim; first occurrence kept&quot;,
+  &quot;blank_header_columns&quot;: [],
+  &quot;duplicate_headers&quot;: [],
+  &quot;input_data_rows&quot;: 1,
+  &quot;columns&quot;: 2,
+  &quot;formula_hazards&quot;: [],
+  &quot;row_width_errors&quot;: [
+    {
+      &quot;record&quot;: 2,
+      &quot;expected&quot;: 2,
+      &quot;actual&quot;: 3
+    }
+  ]
+}</pre></html>
